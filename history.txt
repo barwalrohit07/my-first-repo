@@ -1,0 +1,419 @@
+ 1  pwd
+    2  cd ..
+    3  ls
+    4  cd ..
+    5  ls
+    6  cd bin
+    7  ls
+    8  cd ho
+    9  cd ..
+   10  pwd
+   11  ls
+   12  cd home/
+   13  mkdir Folder1
+   14  cd ..
+   15  cd home/
+   16  ls
+   17  cd ubuntu/
+   18  mkdir folder1
+   19  ls
+   20  touch file1.txt
+   21  ls
+   22  touch file{2..5}.txt
+   23  ls
+   24  echo "hello first script" >file1.txt 
+   25  ls
+   26  cat file1.txt 
+   27  cp file1.txt folder1/
+   28  ls
+   29  cd folder1/
+   30  ls
+   31  cd ..
+   32  ls
+   33  mv file* folder1/
+   34  ls
+   35  cd folder1/
+   36  ls
+   37  cd..
+   38  cd ..
+   39  ls
+   40  whoami
+   41  cd ..
+   42  useradd -m Devops
+   43  sudo useradd -m Devops
+   44  ls
+   45  whoami
+   46  cd home/
+   47  ls
+   48  cd Devops/
+   49  su cd Devops/
+   50  su Devops/
+   51  cd ..
+   52  su Devops
+   53  exit
+   54  ls
+   55  touch file{1..7}.txt
+   56  ls
+   57  ls -l
+   58  echo "hello world" >file1.txt 
+   59  ls -l
+   60  chmod 761
+   61  chmod 761 file1.txt 
+   62  ls -l
+   63  chmod 700 file2.txt 
+   64  ls -l
+   65  clear
+   66  sudo cat /etc/passwd
+   67  cd /home/
+   68  ls
+   69  clear
+   70  sudo groupadd tapusena
+   71  sudo cat /etc/passwd
+   72  clear
+   73  sudo cat /etc/group
+   74  sudo useradd -m jethalal
+   75  sudo useradd -m babita
+   76  claer
+   77  clear
+   78  ls
+   79  gpasswd -a jethalal tapusena 
+   80  sudo gpasswd -a jethalal tapusena 
+   81  sudo gpasswd -a babita  tapusena 
+   82  ls
+   83  sudo cat /etc/group
+   84  ls
+   85  ls -l
+   86  cd ..
+   87  ls
+   88  cd home/
+   89  cd ubuntu/
+   90  ls
+   91  sudo chgrp tapusena file1.txt 
+   92  ls -l
+   93  ls -l file1.txt 
+   94  chmod 744 file1.txt 
+   95  ls -l file1.txt 
+   96  history
+   97  sudo cat /etc/group
+   98  ls -l
+   99  chgrp tapusena folder1/
+  100  sudo chgrp tapusena folder1/
+  101  ls-l
+  102  ls -l
+  103  clar
+  104  clear
+  105  ls
+  106  apt update
+  107  whoami
+  108  sudo apt update 
+  109  sudo apt upgrade 
+  110  clear
+  111  ls
+  112  sudo apt install nginx
+  113  ls
+  114  mkdir logs
+  115  cd logs
+  116  vim assignment.log
+  117  ls
+  118  cd logs
+  119  ls
+  120  touch assignment.txt
+  121  ls
+  122  vim assignment.txt 
+  123  cat assignment.txt 
+  124  cd ..
+  125  grep -r root /
+  126  ls
+  127  cd logs
+  128  ls
+  129  grep TRACE assignment.txt 
+  130  grep TRACE assignment.txt > trace_only_for_qa.txt
+  131  ls
+  132  cat trace_only_for_qa.txt 
+  133  awk {print $1} trace_only_for_qa.txt 
+  134  awk '{print $1}' trace_only_for_qa.txt 
+  135  awk '{print $1,$2}' trace_only_for_qa.txt 
+  136  awk '{print $1,$2,$4}' trace_only_for_qa.txt 
+  137  awk '{print $1,$2,$3}' trace_only_for_qa.txt 
+  138  awk '{print $1,$2,$3,$5}' trace_only_for_qa.txt 
+  139  awk '{print NR $1,$2,$3,$5}' trace_only_for_qa.txt 
+  140  awk '{print NR, $1,$2,$3,$5}' trace_only_for_qa.txt 
+  141  awk '{print NR, $1,$2,$3,$5}' trace_only_for_qa.txt | head
+  142  awk '{print NR, $1,$2,$3,$5}' trace_only_for_qa.txt | head -20
+  143  awk '{print NR, $1,$2,$3,$5}' trace_only_for_qa.txt | tail
+  144  awk 'NR>=10 && NR<=20 {print NR,$1,$2,$3,$5}' trace_only_for_qa.txt 
+  145  ls
+  146  cp assignment.txt assignment.log
+  147  ls
+  148  cat assignment.log 
+  149  ls
+  150  rm trace_only_for_qa.txt 
+  151  rm assignment.txt 
+  152  ls
+  153  awk /TRACE/ assignment.log 
+  154  grep TRACE assignment.log 
+  155  awk /TRACE/ assignment.log 
+  156  awk '/TRACE/ {print $1,,$5}' assignment.log 
+  157  awk '/TRACE/ {print $1..$5}' assignment.log 
+  158  awk '/TRACE/ {print $1,$5}' assignment.log 
+  159  awk '/INFO/ {print $1,$2,$3,$5}' assignment.log 
+  160  awk '/INFO/ {print NR,$1,$2,$3,$5}' assignment.log 
+  161  awk 'NR>20 &&NR<50 && /INFO/ {print NR,$1,$2,$3,$5}' assignment.log 
+  162  awk 'NR>20 &&NR<250 && /INFO/ {print NR,$1,$2,$3,$5}' assignment.log 
+  163  awk 'NR>20 &&NR<250 && /INFO/ {print NR,$1,$2,$3,$5}' assignment.log >info_for_qa.log
+  164  ls
+  165  cat info_for_qa.log 
+  166  ls
+  167  awk '$2>08:52:00 && $2<08:53:00 && {print $1,$2,$3}' assignment.log 
+  168  awk '$2>"08:52:00" && $2<"08:53:00" && {print $1,$2,$3}' assignment.log 
+  169  awk '$2>"08:52:00" && $2<"08:53:00" {print $1,$2,$3}' assignment.log 
+  170  cd..
+  171  cd ..
+  172  ls
+  173  find ~/ -name assignment.log
+  174  find ~/ -name *.log
+  175  find ~/ -user ubuntu
+  176  cd logs/
+  177  ls
+  178  sudo chgrp devops assignment.log 
+  179  cat etc/passwd
+  180  cd ..
+  181  cat etc/passwd
+  182  cat /etc/passwd
+  183  cat /etc/group
+  184  cd logs/
+  185  sudo chgrp Devops assignment.log 
+  186  ls -l assignment.log 
+  187  cd ..
+  188  mkdir scripts
+  189  cd scripts/
+  190  vim hera_peri
+  191  ls
+  192  rm hera_peri 
+  193  ls
+  194  vim hera_pheri.sh
+  195  ls
+  196  ls -l hera_pheri.sh 
+  197  chmod 700 hera_pheri.sh 
+  198  ls
+  199  ls -l hera_pheri.sh 
+  200  ./hera_pheri.sh 
+  201  cat hera_pheri.sh 
+  202  vim hera_pheri.sh 
+  203  ./hera_pheri.sh 
+  204  clear
+  205  ./hera_pheri.sh 
+  206  vim hera_pheri.sh 
+  207  ./hera_pheri.sh 
+  208  ls
+  209  vim newscripts.sh
+  210  ls
+  211  chmod 700 newscripts.sh 
+  212  ls
+  213  ./newscripts.sh 
+  214  ls
+  215  vim newscripts.sh
+  216  ./newscripts.sh 
+  217  ls
+  218  vim variable.sh
+  219  bash variable.sh 
+  220  vim variable.sh
+  221  bash variable.sh 
+  222  vim showArgument.sh
+  223  bash showArgument.sh 
+  224  bash showArgument.sh rohit barwal
+  225  ls
+  226  vim showArgument.sh 
+  227  bash showArgument.sh rohit barwal hello dcn scjejkne scbjkeni cneh
+  228  vim installer.sh
+  229  chmod 700 installer.sh 
+  230  ./installer.sh nginx
+  231  ./installer.sh docker.io
+  232  ./installer.sh docker-compos
+  233  ./installer.sh docker-compose
+  234  vim installer.sh
+  235  ./installer.sh ansible
+  236  vim task.sh
+  237  bash task.sh 
+  238  vim task.sh
+  239  bash task.sh 
+  240  vim task.sh
+  241  bash task.sh 
+  242  vim task.sh
+  243  bash task.sh 
+  244  vim task.sh
+  245  bash task.sh 
+  246  vim task.sh
+  247  bash task.sh 
+  248  vim task.sh
+  249  bash task.sh 
+  250  vim task.sh
+  251  bash task.sh 
+  252  vim task.sh
+  253  bash task.sh 
+  254  cd ..
+  255  ls -*.txt
+  256  ls *.txt
+  257  vim wildcard.sh
+  258  bash wildcard.sh 
+  259  chmod +x wildcard.sh 
+  260  ls -l wildcard.sh 
+  261  ./wildcard.sh 
+  262  history
+  263  exit
+  264  ls
+  265  cd scripts/
+  266  ls
+  267  cd ..
+  268  ls
+  269  mkdir backups
+  270  cd backups/
+  271  cd ..
+  272  cd scripts/
+  273  vim backupData.sh
+  274  pwd
+  275  vim backupData.sh
+  276  chmod 700 backupData.sh 
+  277  ./backupData.sh 
+  278  vim backupData.sh
+  279  ./backupData.sh 
+  280  cd ..
+  281  cd backups/
+  282  ls
+  283  rm scrips-backup-23-12-15-09-18-10.tgt 
+  284  ls
+  285  bash /home/ubuntu/scripts/backupData.sh 
+  286  ls
+  287  tar xzf scrips-backup-23-12-15-09-20-55.tgz 
+  288  ls
+  289  rm *.sh
+  290  ls
+  291  rm -r rohit
+  292  ls
+  293  rm rohitbarwal/
+  294  rm -r rohitbarwal/
+  295  ls
+  296  clear
+  297  cd ..
+  298  cd scripts/
+  299  crontab -e
+  300  cd ..
+  301  cd bac
+  302  cd backups/
+  303  ls
+  304  cd ..
+  305  cd scripts/
+  306  ls
+  307  cd ..
+  308  cd backups/
+  309  ls
+  310  clear
+  311  ls
+  312  ls -l
+  313  ls
+  314  cd ..
+  315  cd scripts/
+  316  ls
+  317  cd ..
+  318  cd backups/
+  319  ls
+  320  cd ..
+  321  cd scripts/
+  322  crontab -e
+  323  vim testme.sh
+  324  ls -l testme.sh 
+  325  getfacl testme.sh 
+  326  sudo apt install acl
+  327  y
+  328  clear
+  329  getfacl testme.sh 
+  330  cd ..
+  331  cd backups/
+  332  ls
+  333  ls -l
+  334  cd ..
+  335  cd scripts/
+  336  setfacl -m u:ubuntu::rwx testme.sh
+  337  setfacl -m  u:ubuntu::rwx testme.sh
+  338  corntab -e
+  339  crontab -e
+  340  cd ..
+  341  cd backups/
+  342  ls
+  343  cd ..
+  344  ls
+  345  ld -l
+  346  ls
+  347  ls -l Devops/
+  348  cat /etc/passwd
+  349  cat /etc/group
+  350  visudo
+  351  sudo visudo
+  352  clear
+  353  ls
+  354  cd Ubuntu
+  355  cd ubuntu
+  356  ls
+  357  sudo -i 
+  358  clear
+  359  cd..
+  360  cd ..
+  361  ls
+  362  su Devops
+  363  sudo visudo
+  364  cd /etc 
+  365  ls
+  366  cd ssh/
+  367  ls
+  368  vim  ssh_config
+  369  shutdown 
+  370  shutdown -c
+  371  sudo visudo
+  372  ls
+  373  cd ....
+  374  cd
+  375  ls
+  376  cd backups/
+  377  ls
+  378  c ..
+  379  cd 
+  380  cd /etc 
+  381  ls
+  382  cd cloud/
+  383  ls
+  384  vim  build.info 
+  385  cd ..
+  386  shutdown -c
+  387  sudo -i 
+  388  cd Devops     
+  389  su Devops 
+  390  ifconfig
+  391  sudo apt install net-tools
+  392  ifconfig 
+  393  ip addr
+  394  nmcli con show
+  395  sudo apt  install network-manager  # version 1.36.6-0ubuntu2
+  396  nmcli con show
+  397  nmcli con show --active
+  398  cd /etc/NetworkManager/system-connections/
+  399  ls
+  400  cd ..
+  401  systemctl restart NetworkManager
+  402  su systemctl restart NetworkManager
+  403  suso systemctl restart NetworkManager
+  404  sudo systemctl restart NetworkManager
+  405  ls
+  406  mkdir projects
+  407  ls
+  408  cd projects/
+  409  ls
+  410  git clone https://github.com/barwalrohit07/my-first-repo.git
+  411  ls
+  412  cd my-first-repo/
+  413  ls
+  414  cat demo.txt 
+  415  ls
+  416  git pull
+  417  ls
+  418  clear
+  419  history
